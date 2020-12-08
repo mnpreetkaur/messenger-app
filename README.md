@@ -16,13 +16,8 @@ Basic messenger app have following features:
 
 ## Code structure
 
-|-- public
-|-- src
-|   |-- components
-|   |-- mock
-|   |-- styles
-|   |-- utils
-|   |-- App.js
+![Code structure](/images/structure.png)
+
 
 * components
 List of reuseable react components for Messenger application like Message, MessageList, SenderList, etc.
@@ -40,6 +35,10 @@ All utility functions/ snippets that can be used throughout the application.
 * App.js
 Messenger App entry JSX file.
 
+## Improvements
+- Paginating messages in the messenger application.
+- Login and session management to messenger application.
+- Real time message update.
 
 ## Available Scripts
 
@@ -65,4 +64,3 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
-## Learn More
