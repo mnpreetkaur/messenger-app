@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types'
 
 import Message from '../Message';
 import './message-list.scss'
@@ -28,6 +29,12 @@ const MessageList = (props) => {
 }
 
 MessageList.defaultProps = {
+    messageList: []
 };
+
+MessageList.propTypes = {
+    messageList: PropTypes.array,
+    currentPerson: PropTypes.string.isRequired
+}
 
 export default MessageList;

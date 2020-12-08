@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types'
 
 import './message-input.scss'
 
@@ -38,6 +39,11 @@ class MessageInput extends React.Component {
 }
 
 MessageInput.defaultProps = {
+    sendMessage: () => {}
 };
+
+MessageInput.propTypes = {
+    sendMessage: PropTypes.func
+}
 
 export default MessageInput;

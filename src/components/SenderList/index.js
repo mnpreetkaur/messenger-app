@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types'
 import classNames from 'classnames'
 
 import './sender-list.scss';
@@ -41,6 +42,15 @@ const SenderList = (props) => {
 }
 
 SenderList.defaultProps = {
+  peopleList: [],
+  onPersonSelect: () => {}
 };
+
+SenderList.propTypes = {
+  peopleList: PropTypes.array,
+  currentPerson: PropTypes.string.isRequired,
+  onPersonSelect: PropTypes.func
+}
+
 
 export default SenderList;

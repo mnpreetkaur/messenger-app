@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types'
 import classNames from 'classnames'
 
 import { displayDateTime } from '../../utils/date-utils'
@@ -22,6 +23,13 @@ const Message = (props) => {
 }
 
 Message.defaultProps = {
+    time: ''
 };
+
+Message.propTypes = {
+    message: PropTypes.string.isRequired,
+    received: PropTypes.bool.isRequired,
+    time: PropTypes.string
+}
 
 export default Message;
