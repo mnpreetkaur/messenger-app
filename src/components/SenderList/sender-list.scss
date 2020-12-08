@@ -1,0 +1,14 @@
+@import '../../styles/common-shades.scss';
+
+.sender-list {
+    color: $colorWhite;
+}
+
+.person {
+    margin: 20px;
+    padding: 10px;
+
+    &.active {
+        background-color: $selectedPerson;
+    }
+}

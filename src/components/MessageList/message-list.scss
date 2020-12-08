@@ -1,0 +1,15 @@
+@import '../../styles/common-shades.scss';
+
+.message {
+    padding: 20px;
+    text-align: left;
+
+    &.align-right {
+        text-align: right;
+    }
+}
+
+.msg-time {
+    font-size: 12px;
+    color: $lightGrey;
+}

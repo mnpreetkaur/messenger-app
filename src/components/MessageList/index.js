@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Message from '../Message';
+import './message-list.scss'
 
 /**
  * This is the message list display of the application. It shows a list of all the
