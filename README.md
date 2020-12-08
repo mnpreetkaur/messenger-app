@@ -1,6 +1,45 @@
-# Getting Started with Create React App
+# React Messenger App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Basic messenger app have following features:
+1. The user should be able to write messages in the chat window and see them appear.
+2. The user should be able to select a friend and see his chat with this friend.
+
+# Project setup steps
+
+1. Install project dependencies
+
+        npm i
+
+2. Start server
+
+        npm start  # Will start server and open the webpage [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+## Code structure
+
+|-- public
+|-- src
+|   |-- components
+|   |-- mock
+|   |-- styles
+|   |-- utils
+|   |-- App.js
+
+* components
+List of reuseable react components for Messenger application like Message, MessageList, SenderList, etc.
+Every component folder contains an index JSX and corresponsing CSS file.
+
+* mock
+The data currently mocked in MessengerApp component state could be passed on from mock for simplicity
+
+* styles
+Contains all the common and resuable styles, CSS variables, colour themes, etc.
+
+* utils
+All utility functions/ snippets that can be used throughout the application.
+
+* App.js
+Messenger App entry JSX file.
+
 
 ## Available Scripts
 
@@ -26,45 +65,4 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
 ## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
