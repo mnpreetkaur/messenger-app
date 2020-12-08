@@ -1,0 +1,28 @@
+@import '../../styles/common-shades.scss';
+
+$sender-list-width: 20%;
+$message-input-height: 50px;
+
+.messenger-app {
+    height: 100vh;
+    display: flex;
+}
+
+.message-block {
+    width: calc(100% - #{$sender-list-width});
+}
+
+.sender-list {
+    width: $sender-list-width;
+    background-color: $darkGrey;
+}
+
+.message-list {
+    height: calc(100% - #{$message-input-height});
+    background-color: $lighterGrey;
+}
+
+.message-input {
+    height: $message-input-height;
+    background-color: $mediumGrey;
+}
