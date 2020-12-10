@@ -20,47 +20,47 @@ class MessengerApp extends React.Component {
     constructor (props) {
         super(props)
         this.state = {
-          currentPerson: '1',
-          peopleList: [
-            {
-              id: '1',
-              name: 'Person 1'
-            },
-            {
-              id: '2',
-              name: 'Person 2'
-            },
-            {
-              id: '3',
-              name: 'Person 3'
-            },
-            {
-              id: '4',
-              name: 'Person 4'
-            },
-          ],
-          messageList: [
-            { from: '1', messages: [
-                { message: 'Hey! How are you Person1?', received: true, time: '2020-08-12T20:17:46.384Z' },
-                { message: 'I am good', received: false, time: '2020-08-12T20:17:47.384Z' },
-                { message: 'What is the plan?', received: false, time: '2020-08-12T20:17:48.384Z' }
-            ] },
-            { from: '2', messages: [
-                { message: 'Hey! How are you Person2?', received: true, time: '2020-08-12T20:17:46.384Z' },
-                { message: 'I am good', received: false, time: '2020-08-12T20:17:47.384Z' },
-                { message: 'What is the plan?', received: false, time: '2020-08-12T20:17:48.384Z' }
-            ] },
-            { from: '3', messages: [
-                { message: 'Hey! How are you Person3?', received: true, time: '2020-08-12T20:17:46.384Z' },
-                { message: 'I am good', received: false, time: '2020-08-12T20:17:47.384Z' },
-                { message: 'What is the plan?', received: false, time: '2020-08-12T20:17:48.384Z' }
-            ] },
-            { from: '4', messages: [
-                { message: 'Hey! How are you Person4?', received: true, time: '2020-08-12T20:17:46.384Z' },
-                { message: 'I am good', received: false, time: '2020-08-12T20:17:47.384Z' },
-                { message: 'What is the plan?', received: false, time: '2020-08-12T20:17:48.384Z' }
-            ] }
-          ]
+            currentPerson: '1',
+            peopleList: [
+                {
+                id: '1',
+                name: 'Person 1'
+                },
+                {
+                id: '2',
+                name: 'Person 2'
+                },
+                {
+                id: '3',
+                name: 'Person 3'
+                },
+                {
+                id: '4',
+                name: 'Person 4'
+                },
+            ],
+            messageList: [
+                { from: '1', messages: [
+                    { message: 'Hey! How are you Person1?', received: true, time: '2020-08-12T20:17:46.384Z' },
+                    { message: 'I am good', received: false, time: '2020-08-12T20:17:47.384Z' },
+                    { message: 'What is the plan?', received: false, time: '2020-08-12T20:17:48.384Z' }
+                ] },
+                { from: '2', messages: [
+                    { message: 'Hey! How are you Person2?', received: true, time: '2020-08-12T20:17:46.384Z' },
+                    { message: 'I am good', received: false, time: '2020-08-12T20:17:47.384Z' },
+                    { message: 'What is the plan?', received: false, time: '2020-08-12T20:17:48.384Z' }
+                ] },
+                { from: '3', messages: [
+                    { message: 'Hey! How are you Person3?', received: true, time: '2020-08-12T20:17:46.384Z' },
+                    { message: 'I am good', received: false, time: '2020-08-12T20:17:47.384Z' },
+                    { message: 'What is the plan?', received: false, time: '2020-08-12T20:17:48.384Z' }
+                ] },
+                { from: '4', messages: [
+                    { message: 'Hey! How are you Person4?', received: true, time: '2020-08-12T20:17:46.384Z' },
+                    { message: 'I am good', received: false, time: '2020-08-12T20:17:47.384Z' },
+                    { message: 'What is the plan?', received: false, time: '2020-08-12T20:17:48.384Z' }
+                ] }
+            ]
         }
     }
 
@@ -107,7 +107,7 @@ class MessengerApp extends React.Component {
             <SenderList peopleList={peopleList} onPersonSelect={this.onPersonSelect} currentPerson={currentPerson} />
             <div className="message-block">
                 <MessageList messageList={messageList} currentPerson={currentPerson} />
-                <MessageInput sendMessage={this.onsendMessage} />
+                <MessageInput sendMessage={this.onsendMessage} currentPerson={currentPerson} />
             </div>
         </div>
     }

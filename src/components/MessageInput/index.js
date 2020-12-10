@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types'
+// import draftingHook from './draftingHook'
 
 import './message-input.scss'
 
@@ -7,35 +8,61 @@ import './message-input.scss'
  * A message input component where a message could be typed and sent to the the person.
  * It would appear in the current chat session once sent.
  */
-class MessageInput extends React.Component {
-    constructor (props) {
-        super(props)
-        this.input = React.createRef()
-        this.submitHandler = this.submitHandler.bind(this)
+const MessageInput = (props) => {
+    const { sendMessage, currentPerson } = props
+
+    const [draft, changeDraft] = useState([])
+  
+    const getDraft = (sentTo) => {
+      const messageObj =  draft.find(({ to }) => to === sentTo )
+      const { msg = "" } = messageObj || {}
+      return msg
+    }
+  
+    const setDraft = (sentTo, message) => {
+      const index = draft.findIndex(({ to }) => to === sentTo )
+      if (index > 0) {
+        draft[index].msg = message
+      } else {
+        draft.push({
+          to: sentTo,
+          msg: message
+        })
+      }
+      changeDraft(draft)
     }
 
-    submitHandler (e) {
-        e.preventDefault(); // Stop form from refreshing the page on submit
-        const { sendMessage } = this.props
-        const msg = this.input.value
+    const [ to, changeTo ] = useState(currentPerson)
+    const [ inputValue, changeInputVal ] = useState('')
 
-        if (msg) {
-            this.input.value = ''
-            sendMessage(msg)
+    useEffect(() => {
+        if (currentPerson !== to) {
+            setDraft(to, inputValue)
+            changeTo(currentPerson)
+            changeInputVal(getDraft(currentPerson))
+        }
+    }, [currentPerson])
+
+
+    const submitHandler = (e) => {
+        e.preventDefault();
+
+        if (inputValue) {
+            changeInputVal('')
+            sendMessage(inputValue)
         }
     }
 
-    render() {
-        return <div className="message-input">
-            <form className="chat-input" onSubmit={this.submitHandler}>
-                <input className="chat-text"
-                type="text"
-                ref={input => { this.input = input }}
-                placeholder="Type the message here"
-                required />
-            </form>
-        </div>
-    }
+    return <div className="message-input">
+        <form className="chat-input" onSubmit={submitHandler}>
+            <input className="chat-text"
+            type="text"
+            onChange={(e) => changeInputVal(e.target.value)}
+            value={inputValue}
+            placeholder="Type the message here"
+            required />
+        </form>
+    </div>
 }
 
 MessageInput.defaultProps = {
@@ -43,7 +70,8 @@ MessageInput.defaultProps = {
 };
 
 MessageInput.propTypes = {
-    sendMessage: PropTypes.func
+    sendMessage: PropTypes.func,
+    currentPerson: PropTypes.string.isRequired
 }
 
 export default MessageInput;

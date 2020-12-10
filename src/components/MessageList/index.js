@@ -22,7 +22,8 @@ const MessageList = (props) => {
     return <div className="message-list">
         {
             messages.map((message) => {
-                return <Message {...message} />
+                const { message: msg, time } = message
+                return <Message key={`${msg}${time}`} {...message} />
             })
         }
     </div>
