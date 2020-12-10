@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types'
-// import draftingHook from './draftingHook'
+import DraftingHook from './draftingHook'
 
 import './message-input.scss'
 
@@ -11,27 +11,7 @@ import './message-input.scss'
 const MessageInput = (props) => {
     const { sendMessage, currentPerson } = props
 
-    const [draft, changeDraft] = useState([])
-  
-    const getDraft = (sentTo) => {
-      const messageObj =  draft.find(({ to }) => to === sentTo )
-      const { msg = "" } = messageObj || {}
-      return msg
-    }
-  
-    const setDraft = (sentTo, message) => {
-      const index = draft.findIndex(({ to }) => to === sentTo )
-      if (index > 0) {
-        draft[index].msg = message
-      } else {
-        draft.push({
-          to: sentTo,
-          msg: message
-        })
-      }
-      changeDraft(draft)
-    }
-
+    const { getDraft, setDraft } = DraftingHook()
     const [ to, changeTo ] = useState(currentPerson)
     const [ inputValue, changeInputVal ] = useState('')
 
